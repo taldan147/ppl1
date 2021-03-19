@@ -18,12 +18,19 @@ describe("Assignment 1 Part 2", () => {
         });
     });
 
-//     describe("isPaired", () => {
-//         it("returns true for a string with paired parens", () => {
-//             expect(isPaired("([{}])")).to.be.true;
-//         });
+    describe("isPaired", () => {
+        it("returns true for a string with paired parens", () => {
+            expect(isPaired("([{}])")).to.be.true;
+        });
 
-//         it("returns false when the parens are not paired", () => {
-//             expect(isPaired("(]")).to.be.false;
-//         });
-//     });
+        it("returns false when the parens are not paired", () => {
+            expect(isPaired("(]")).to.be.false;
+        });
+        it("returns false when the parens are not paired", () => {
+            expect(isPaired("This is ]some[ (text)")).to.be.false;
+        });
+
+        it("returns true for a string with paired parens", () => {
+            expect(isPaired("This is ([some]) {text}")).to.be.true;
+        });
+    });
