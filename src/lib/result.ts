@@ -14,7 +14,7 @@ export const makeOk = <T>(value: T): Result<T> =>
     ({ tag: "Ok", value: value });
 
 export const makeFailure = <T>(message: string): Result<T> =>
-    ({ tag: "Failure", message: message });
+    ({ tag: "Failure", message: message }); 
 
 export const isOk = <T>(r: Result<T>): r is Ok<T> =>
     r.tag === "Ok";

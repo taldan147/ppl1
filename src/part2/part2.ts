@@ -42,7 +42,7 @@ export const runLengthEncoding = (str : string):string =>{
     // console.log(R.join(shit2));
     // return R.join(shit2);
     const g = R.join('',R.unnest(R.zip(uniqStrings, mapToCounts(strArr, []))).filter((a : string | number)=> typeof(a)!=='number' || a!==1))
-    console.log(g);
+    // console.log(g);
     return g;
 };
 
