@@ -33,16 +33,7 @@ const mapToCounts = (orig : string[], counts : number[]) : number[] =>{
 export const runLengthEncoding = (str : string):string =>{
     const strArr = stringToArray(str);
     const uniqStrings = R.dropRepeats(strArr);
-    // const shit=R.zip(uniqStrings, mapToCounts(strArr, []));
-    // console.log(shit);
-    // const shit3=R.unnest(shit);
-    // console.log(shit3);
-    // const shit2=shit3.filter((a:any)=> typeof(a) ==="number"?a=a.toString():a=a);
-    // console.log(shit2);
-    // console.log(R.join(shit2));
-    // return R.join(shit2);
     const g = R.join('',R.unnest(R.zip(uniqStrings, mapToCounts(strArr, []))).filter((a : string | number)=> typeof(a)!=='number' || a!==1))
-    // console.log(g);
     return g;
 };
 
@@ -60,13 +51,6 @@ const isPair = (left : string ,right: string) : boolean =>{
 const isOpen = (bracket : string) : boolean =>{
     return bracket ==='{' || bracket ==='[' || bracket ==='(';
 }
-
-// const isPairedRecursion = (parArr : string[], open : string, ind : number) : boolean =>{
-//     if (ind === parArr.length)
-//         return open ==='' ? true : false;
-//     if (isOpen(parArr[ind]))
-//         return isPairedRec
-// }
 
 const isPairedRecursion = (parArr : string[], myStack : string[], ind : number) : boolean =>{
     if (ind === parArr.length)
